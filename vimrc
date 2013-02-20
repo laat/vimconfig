@@ -1,6 +1,12 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+"security
+"--------
+set modelines=0                               " no modelines [http://www.guninski.com/vim1.html]
+let g:secure_modelines_verbose=0              " securemodelines vimscript
+let g:secure_modelines_modelines = 15         " 15 available modelines
+
 "                Search
 " ---------------------
 set incsearch " incremental search
