@@ -37,3 +37,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/vim-cute-python"]
+	path = vim/bundle/vim-cute-python
+	url = git://github.com/ehamberg/vim-cute-python.git
