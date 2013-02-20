@@ -1,6 +1,24 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+"                Search
+" ---------------------
+set incsearch " incremental search
+set ignorecase " search ignoring case
+set smartcase " Ignore case when searching lowercase
+set hlsearch " highlight the search
+set showmatch " show matching bracket
+set diffopt=filler,iwhite " ignore all whitespace and sync
+
+" regex search, the default is sort of broken
+nnoremap / /\v
+vnoremap / /\v
+
+noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
+
+"                Plugins
+" ----------------------
+
 " Snipmate
 let g:snips_author = 'Sigurd Fosseng'
 
@@ -11,7 +29,7 @@ let NERDTreeWinPos="left"
 let NERDTreeWinSize=28
 nmap <leader>n :NERDTreeToggle<cr>
 
-" syntastic
+" Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=0
