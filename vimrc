@@ -157,7 +157,7 @@ augroup END
 
 "                GVIM:
 "----------------------------------
-
+autocmd GUIEnter * set visualbell t_vb=
 if has("gui_running")
       set guioptions-=m
       set guioptions-=T
