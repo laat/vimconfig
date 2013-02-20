@@ -128,9 +128,14 @@ set noerrorbells                             " no error bells please
 set t_Co=256                                 " 256 colors
 set cursorline                               " mark current line with a line
 set laststatus=2
+set noshowmode                               " Hide the default mode text 
 
 " space as vertical character
 set fcs+=vert:\ 
+
+" colorcolumn
+set colorcolumn=+1                           " A line at 85 characters
+hi ColorColumn ctermbg=black guibg=#232728
 
 " Powerline
 " pip install --user git+git://github.com/Lokaltog/powerline
