@@ -68,8 +68,9 @@ vnoremap <F1> <ESC>
 map <S-h> gT
 map <S-l> gt
 
-" D behaves
+" Y and D behaves
 nnoremap D d$
+nnoremap Y y$
 
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
