@@ -40,3 +40,6 @@
 [submodule "vim/bundle/vim-cute-python"]
 	path = vim/bundle/vim-cute-python
 	url = git://github.com/ehamberg/vim-cute-python.git
+[submodule "vim/bundle/rope-omni"]
+	path = vim/bundle/rope-omni
+	url = git://github.com/rygwdn/rope-omni.git

@@ -19,4 +19,5 @@ if filereadable("/usr/local/share/vim/plugin/ropevim.vim")
 
 else
   autocmd FileType python set omnifunc=pythoncomplete#Complete
+  call add(g:pathogen_disabled, 'rope-omni')
 endif

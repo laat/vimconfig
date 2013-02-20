@@ -1,6 +1,7 @@
 " Installation:
 " pip install --user git+git://github.com/Lokaltog/powerline
 
+let g:pathogen_disabled = []
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -187,6 +188,4 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-  augroup END
 endif " has("autocmd")
-
