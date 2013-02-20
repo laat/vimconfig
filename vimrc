@@ -114,3 +114,17 @@ hi error guifg=#FF0000 guibg=bg
 if isdirectory("/home/sigurd/.local/lib/python2.7/site-packages/powerline/bindings/vim")
     set rtp+=/home/sigurd/.local/lib/python2.7/site-packages/powerline/bindings/vim
 endif
+
+
+"                Other
+"----------------------------------
+
+" Always jump to last known cursor pos
+if has("autocmd")
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+  augroup END
+endif " has("autocmd")
+
