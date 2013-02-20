@@ -108,3 +108,9 @@ let g:syntastic_warning_symbol='⚠'
 hi todo guifg=#FFA500 guibg=bg
 let g:syntastic_error_symbol='✗'
 hi error guifg=#FF0000 guibg=bg
+
+" Powerline
+" pip install --user git+git://github.com/Lokaltog/powerline
+if isdirectory("/home/sigurd/.local/lib/python2.7/site-packages/powerline/bindings/vim")
+    set rtp+=/home/sigurd/.local/lib/python2.7/site-packages/powerline/bindings/vim
+endif
