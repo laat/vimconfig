@@ -1,8 +1,11 @@
+" Installation:
+" pip install --user git+git://github.com/Lokaltog/powerline
+
 call pathogen#infect()
 call pathogen#helptags()
 
 
-"                Security
+"                Security:
 "----------------------------------
 
 set modelines=0                               " no modelines [http://www.guninski.com/vim1.html]
@@ -10,7 +13,7 @@ let g:secure_modelines_verbose=0              " securemodelines vimscript
 let g:secure_modelines_modelines = 15         " 15 available modelines
 
 
-"                Sanity
+"                Sanity:
 "----------------------------------
 
 filetype on
@@ -29,7 +32,7 @@ set scrolloff=3                              " keep at least 3 lines above/below
 set sidescrolloff=5                          " keep at least 5 lines left/right
 
 
-"               General keybindings
+"               Keybindings:
 "----------------------------------
 let mapleader = ","
 
@@ -74,7 +77,7 @@ iabbrev ldis ಠ_ಠ
 iabbrev levi 😈
 
 
-"                Search
+"                Search:
 "----------------------------------
 
 set incsearch " incremental search
@@ -91,7 +94,7 @@ vnoremap / /\v
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 
-"                Plugins
+"                Plugins:
 "----------------------------------
 
 " Snipmate
@@ -114,15 +117,20 @@ let g:syntastic_error_symbol='✗'
 hi error guifg=#FF0000 guibg=bg
 
 
-"                Style
+"                Style:
 "----------------------------------
 
+colorscheme molokai
 set ruler                                    " show the line number on the bar
 set nonu                                     " no linenumbers
 set visualbell t_vb=                         " Disable ALL bells
 set noerrorbells                             " no error bells please
 set t_Co=256                                 " 256 colors
 set cursorline                               " mark current line with a line
+set laststatus=2
+
+" space as vertical character
+set fcs+=vert:\ 
 
 " Powerline
 " pip install --user git+git://github.com/Lokaltog/powerline
@@ -142,7 +150,30 @@ augroup trailing " do not show tailing whitespace in insertmode
 augroup END
 
 
-"                Other
+"                GVIM:
+"----------------------------------
+
+if has("gui_running")
+      set guioptions-=m
+      set guioptions-=T
+
+      " no scrollbars
+      set guioptions+=LlRrb
+      set guioptions-=LlRrb
+
+      highlight SpellBad term=underline gui=undercurl guisp=Orange 
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+      "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+
+      let g:Powerline_symbols = 'fancy'
+      let g:Powerline_stl_path_style = 'short'
+      let g:Powerline_theme = 'custom'
+
+      set clipboard=unnamedplus " X11 clipboard
+endif
+
+
+"                Other:
 "----------------------------------
 
 " Always jump to last known cursor pos

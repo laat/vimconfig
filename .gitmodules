@@ -19,3 +19,9 @@
 [submodule "vim/bundle/securemodelines"]
 	path = vim/bundle/securemodelines
 	url = git://github.com/ciaranm/securemodelines.git
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = https://github.com/tomasr/molokai
+[submodule "fonts"]
+	path = fonts
+	url = git://github.com/Lokaltog/powerline-fonts.git
