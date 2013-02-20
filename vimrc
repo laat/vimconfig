@@ -25,9 +25,13 @@ set smarttab                                 " tab and backspace are smart
 set undolevels=1000                          " 1000 undos
 set undofile                                 " undo after exit, <filename>.un~
 
+set scrolloff=3                              " keep at least 3 lines above/below
+set sidescrolloff=5                          " keep at least 5 lines left/right
+
 
 "               General keybindings
 "----------------------------------
+let mapleader = ","
 
 " norwegian oe is :
 nnoremap <Char-248> :
@@ -109,11 +113,33 @@ hi todo guifg=#FFA500 guibg=bg
 let g:syntastic_error_symbol='✗'
 hi error guifg=#FF0000 guibg=bg
 
+
+"                Style
+"----------------------------------
+
+set ruler                                    " show the line number on the bar
+set nonu                                     " no linenumbers
+set visualbell t_vb=                         " Disable ALL bells
+set noerrorbells                             " no error bells please
+set t_Co=256                                 " 256 colors
+set cursorline                               " mark current line with a line
+
 " Powerline
 " pip install --user git+git://github.com/Lokaltog/powerline
 if isdirectory("/home/sigurd/.local/lib/python2.7/site-packages/powerline/bindings/vim")
     set rtp+=/home/sigurd/.local/lib/python2.7/site-packages/powerline/bindings/vim
 endif
+
+" Show special characters (tab and eol)
+" set list
+set listchars=tab:▸\ ,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+augroup trailing " do not show tailing whitespace in insertmode
+    au!
+    au InsertEnter * :set listchars-=trail:⌴
+    au InsertLeave * :set listchars+=trail:⌴
+augroup END
 
 
 "                Other
