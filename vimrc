@@ -121,6 +121,11 @@ hi error guifg=#FF0000 guibg=bg
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack 
 
+" do not load rope-omni if not ropevim
+if !filereadable("/usr/local/share/vim/plugin/ropevim.vim")
+  call add(g:pathogen_disabled, 'rope-omni')
+endif
+
 
 "                Style:
 "----------------------------------

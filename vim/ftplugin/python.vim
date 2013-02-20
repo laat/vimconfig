@@ -1,3 +1,12 @@
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal textwidth=79
+setlocal smarttab
+setlocal expandtab
+setlocal nowrap
+setlocal formatoptions-=t         " do not wrap automatically on text
+
 " rope
 " pip install rope ropemode ropevim ropevim-omni
 if filereadable("/usr/local/share/vim/plugin/ropevim.vim")
@@ -16,8 +25,10 @@ if filereadable("/usr/local/share/vim/plugin/ropevim.vim")
   map <leader>ri :call RopeOrganizeImports()<cr>
   map <leader>rr :call RopeRename()<cr>
   map <leader>rc :call RopeShowCalltip()<cr>
-
 else
   autocmd FileType python set omnifunc=pythoncomplete#Complete
-  call add(g:pathogen_disabled, 'rope-omni')
 endif
+
+
+" Remove unused whitespace on save
+au BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
