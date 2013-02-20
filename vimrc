@@ -116,6 +116,10 @@ hi todo guifg=#FFA500 guibg=bg
 let g:syntastic_error_symbol='✗'
 hi error guifg=#FF0000 guibg=bg
 
+" ack grep
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <leader>a :Ack 
+
 
 "                Style:
 "----------------------------------
