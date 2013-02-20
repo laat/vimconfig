@@ -1,14 +1,31 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-"security
-"--------
+
+"                Security
+"------------------------
 set modelines=0                               " no modelines [http://www.guninski.com/vim1.html]
 let g:secure_modelines_verbose=0              " securemodelines vimscript
 let g:secure_modelines_modelines = 15         " 15 available modelines
 
+"                General
+"------------------------
+
+" sanity
+filetype on
+filetype plugin indent on                    " load file type plugins + indentation
+set nocompatible
+set encoding=utf-8
+set fileencodings=utf-8
+set backspace=indent,eol,start               " backspace over all kinds of things
+set noautowrite                              " don't automagically write on :next
+set autoindent smartindent copyindent        " auto/smart indent
+set smarttab                                 " tab and backspace are smart
+set undolevels=1000                          " 1000 undos
+set undofile                                 " undo after exit, <filename>.un~
+
 "                Search
-" ---------------------
+" -----------------------
 set incsearch " incremental search
 set ignorecase " search ignoring case
 set smartcase " Ignore case when searching lowercase
@@ -23,7 +40,7 @@ vnoremap / /\v
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 "                Plugins
-" ----------------------
+" -----------------------
 
 " Snipmate
 let g:snips_author = 'Sigurd Fosseng'
