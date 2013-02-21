@@ -103,7 +103,7 @@ noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 let g:snips_author = 'Sigurd Fosseng'
 
 " Nerdtree
-autocmd vimenter * if !argc() | NERDTree | endif " auto open if no file
+"autocmd vimenter * if !argc() | NERDTree | endif " auto open if no file
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp']
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=28
