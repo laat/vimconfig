@@ -5,11 +5,11 @@
 "             kstep <me@kstep.me>
 "
 "============================================================================
-function! SyntaxCheckers_python_flake8_IsAvailable()
-    return executable('flake8')
+function! SyntaxCheckers_python_myflake8_IsAvailable()
+    return executable('myflake8')
 endfunction
 
-function! SyntaxCheckers_python_flake8_GetHighlightRegex(i)
+function! SyntaxCheckers_python_myflake8_GetHighlightRegex(i)
     if match(a:i['text'], 'is assigned to but never used') > -1
                 \ || match(a:i['text'], 'imported but unused') > -1
                 \ || match(a:i['text'], 'undefined name') > -1
@@ -25,7 +25,7 @@ function! SyntaxCheckers_python_flake8_GetHighlightRegex(i)
     return ''
 endfunction
 
-function! SyntaxCheckers_python_flake8_GetLocList()
+function! SyntaxCheckers_python_myflake8_GetLocList()
     let makeprg = syntastic#makeprg#build({
                 \ 'exe': 'flake8',
                 \ 'subchecker': 'flake8' })
@@ -35,4 +35,4 @@ endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'python',
-    \ 'name': 'flake8'})
+    \ 'name': 'myflake8'})

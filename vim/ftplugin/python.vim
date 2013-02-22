@@ -7,7 +7,7 @@ setlocal expandtab
 setlocal nowrap
 setlocal formatoptions-=t         " do not wrap automatically on text
 
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['myflake8']
 
 " rope
 " pip install rope ropemode ropevim ropevim-omni
