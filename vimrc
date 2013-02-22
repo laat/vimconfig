@@ -78,6 +78,9 @@ cmap w!! w !sudo tee % >/dev/null
 iabbrev ldis ಠ_ಠ
 iabbrev levi 😈
 
+map <leader>h :NERDTreeClose<cr><C-W>t<C-W>H
+map <leader>k :NERDTreeClose<cr><C-W>t<C-W>K
+
 
 "                Search:
 "----------------------------------
@@ -104,9 +107,9 @@ let g:snips_author = 'Sigurd Fosseng'
 
 " Nerdtree
 "autocmd vimenter * if !argc() | NERDTree | endif " auto open if no file
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp']
-let NERDTreeWinPos="left"
-let NERDTreeWinSize=28
+"let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp']
+"let NERDTreeWinPos="left"
+let g:NERDTreeWinSize=40
 nmap <leader>n :NERDTreeToggle<cr>
 
 " Syntastic
@@ -114,9 +117,11 @@ let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=0
 let g:syntastic_warning_symbol='⚠'
-hi todo guifg=#FFA500 guibg=bg
+let g:syntastic_style_error_symbol = '✠'
+let g:syntastic_style_warning_symbol = '≈'
 let g:syntastic_error_symbol='✗'
 hi error guifg=#FF0000 guibg=bg
+hi todo guifg=#FFA500 guibg=bg
 
 " ack grep
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -126,6 +131,10 @@ nnoremap <leader>a :Ack
 if !filereadable("/usr/local/share/vim/plugin/ropevim.vim")
   call add(g:pathogen_disabled, 'rope-omni')
 endif
+
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 
 "                Style:
@@ -178,7 +187,7 @@ if has("gui_running")
       set guioptions-=LlRrb
 
       highlight SpellBad term=underline gui=undercurl guisp=Orange 
-      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
       "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
 
       set clipboard=unnamedplus " X11 clipboard
