@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vim-css-color"]
 	path = vim/bundle/vim-css-color
 	url = git://github.com/ap/vim-css-color.git
+[submodule "vim/bundle/vim-django-support"]
+	path = vim/bundle/vim-django-support
+	url = git://github.com/lambdalisue/vim-django-support.git
